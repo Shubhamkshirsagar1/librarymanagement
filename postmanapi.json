@@ -1,0 +1,324 @@
+{
+  "info": {
+    "_postman_id": "580a6060-c321-4890-9b8e-9b964ae62946",
+    "name": "Library Manegment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25416808"
+  },
+  "item": [
+    {
+      "name": "AUTH",
+      "item": [
+        {
+          "name": "REGISTER",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"Shubha,\",\n  \"last_name\": \"Kshirsagar\",\n  \"email\": \"kshirsagar234@gmail.com\",\n  \"password\": \"shubham@123\",\n  \"role\": \"LIBRARIAN\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/auth/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "auth", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "LOGIN",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "LIBRARIAN",
+      "item": [
+        {
+          "name": "ADD BOOK",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "UPDATE A BOOK",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjliN2NkZTA4LWFmNGEtNDBkNC1hODY2LTI0NjE2ZWM2ZTRlZiIsInJvbGUiOiJMSUJSQVJJQU4iLCJpYXQiOjE3MjgxOTA3NjMsImV4cCI6MTcyODM2MzU2M30.pC1mvxufHd2K-qu301cNTzQkl0k-nCz-MsZgHqyp2g0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer <JWT_TOKEN>"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Shubham New book updated\",\n  \"author\": \"Shubham\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/librarian/book/d8d6be5f-bc84-4c60-91e8-d89e3c2c7d96",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "librarian",
+                "book",
+                "d8d6be5f-bc84-4c60-91e8-d89e3c2c7d96"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET A BOOK BY ID",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "GET MEMBERS OF A LIBRARIAN",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "MMEBR HISTORY",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "ADD MEMBER",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "UPDATE MEMBER",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjliN2NkZTA4LWFmNGEtNDBkNC1hODY2LTI0NjE2ZWM2ZTRlZiIsInJvbGUiOiJMSUJSQVJJQU4iLCJpYXQiOjE3MjgxOTA3NjMsImV4cCI6MTcyODM2MzU2M30.pC1mvxufHd2K-qu301cNTzQkl0k-nCz-MsZgHqyp2g0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <JWT_TOKEN>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"Sandip 1\",\n  \"last_name\": \"Pandiy 1\",\n  \"email\": \"sandip@gmail.com\",\n  \"status\": \"ACTIVE\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/librarian/member/cad065df-f221-424d-9f85-52da10217ab9",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "librarian",
+                "member",
+                "cad065df-f221-424d-9f85-52da10217ab9"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE MEMBER",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "MEMBER",
+      "item": [
+        {
+          "name": "VIEW BOOKS",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI4NjY4OTVhLWY0NTQtNDQ1Ni1hYWJlLTE1OTAwY2IzMGZlNyIsInJvbGUiOiJNRU1CRVIiLCJpYXQiOjE3MjgxOTI3NDYsImV4cCI6MTcyODM2NTU0Nn0.LAmgFFMtBuB6XOoHpnnmQWHPPLhvAFDGMtpNxpO-nFk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <JWT_TOKEN>"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/member/books",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "member", "books"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "BORROW BOOKS",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI4NjY4OTVhLWY0NTQtNDQ1Ni1hYWJlLTE1OTAwY2IzMGZlNyIsInJvbGUiOiJNRU1CRVIiLCJpYXQiOjE3MjgxOTI3NDYsImV4cCI6MTcyODM2NTU0Nn0.LAmgFFMtBuB6XOoHpnnmQWHPPLhvAFDGMtpNxpO-nFk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <JWT_TOKEN>"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/member/borrow/36eeac49-0b61-4353-8d0d-babe461a6a7f",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "member",
+                "borrow",
+                "36eeac49-0b61-4353-8d0d-babe461a6a7f"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "RETURN BOOK",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <JWT_TOKEN>"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/member/return/36eeac49-0b61-4353-8d0d-babe461a6a7f",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "member",
+                "return",
+                "36eeac49-0b61-4353-8d0d-babe461a6a7f"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE OWN ACCOUNT",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "VIEW MEMBERS BORROW HISTORY",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
